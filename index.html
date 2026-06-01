@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Scaler Neovarsity - Master's in Computer Science</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0a0a; --paper:#ffffff; --line:#1a1a1a; --mute:#6b6b6b; --soft:#f5f5f5; --softer:#fafafa;
+  }
+  html,body{background:var(--paper);color:var(--ink);font-family:'Inter',ui-sans-serif,system-ui,-apple-system}
+  .display{font-weight:800;letter-spacing:-0.02em;line-height:0.98}
+  .eyebrow{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;font-weight:600}
+  .rule{border-top:1px solid #111}
+  .hairline{border:1px solid #111}
+  .btn-primary{background:#000;color:#fff;border:1px solid #000;padding:14px 22px;font-weight:600;display:inline-flex;align-items:center;gap:8px;transition:all .15s}
+  .btn-primary:hover{background:#fff;color:#000}
+  .btn-ghost{background:#fff;color:#000;border:1px solid #000;padding:14px 22px;font-weight:600;display:inline-flex;align-items:center;gap:8px;transition:all .15s}
+  .btn-ghost:hover{background:#000;color:#fff}
+  .num{font-feature-settings:"tnum","lnum"}
+  .marquee{display:flex;gap:64px;animation:scroll 40s linear infinite;width:max-content}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .scrollx{scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+  .scrollx > *{scroll-snap-align:start}
+  .scrollx::-webkit-scrollbar{height:6px}
+  .scrollx::-webkit-scrollbar-thumb{background:#000;border-radius:3px}
+  details > summary{list-style:none;cursor:pointer}
+  details > summary::-webkit-details-marker{display:none}
+  details[open] .chev{transform:rotate(45deg)}
+  .chev{transition:transform .2s}
+  .tab[aria-selected="true"]{background:#000;color:#fff}
+  .underline-link{border-bottom:1px solid #000;padding-bottom:2px}
+  .checker{background-image:linear-gradient(45deg,#f5f5f5 25%,transparent 25%),linear-gradient(-45deg,#f5f5f5 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#f5f5f5 75%),linear-gradient(-45deg,transparent 75%,#f5f5f5 75%);background-size:24px 24px;background-position:0 0,0 12px,12px -12px,12px 0}
+</style>
+</head>
+<body class="antialiased">
+
+<!-- ───────── 1. NAV ───────── -->
+<header class="sticky top-0 z-50 bg-white border-b border-black">
+  <div class="max-w-[1400px] mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="#" class="font-black text-xl tracking-tight">SCALER</a>
+    <nav class="hidden lg:flex gap-7 text-sm font-medium">
+      <a href="#why" class="hover:underline">Why Neovarsity</a>
+      <a href="#curriculum" class="hover:underline">Curriculum</a>
+      <a href="#cross" class="hover:underline">Cross-Program</a>
+      <a href="#instructors" class="hover:underline">Instructors</a>
+      <a href="#placements" class="hover:underline">Placements</a>
+      <a href="#degree" class="hover:underline">Degree</a>
+      <a href="#faq" class="hover:underline">FAQ</a>
+    </nav>
+    <a href="#cta" class="btn-primary text-sm py-2 px-4">Request Callback →</a>
+  </div>
+</header>
+
+<!-- ───────── 2. HERO ───────── -->
+<section class="border-b border-black">
+  <div class="max-w-[1400px] mx-auto px-6 py-20 lg:py-28 grid lg:grid-cols-12 gap-10 items-end">
+    <div class="lg:col-span-8">
+      <div class="eyebrow mb-6 inline-flex items-center gap-2">
+        <span class="w-6 h-px bg-black"></span>
+        Upgrade your Scaler Program with Neovarsity
+      </div>
+      <h1 class="display text-5xl sm:text-6xl lg:text-7xl mb-8">
+        Earn a Global Master's Degree in Computer Science <span class="italic font-light">- with an Oxford Certification on top.</span>
+      </h1>
+      <p class="text-lg max-w-2xl text-gray-700 mb-10">
+        Study at Scaler, earn credits toward a Master's from Woolf University. Same curriculum, same effort - now backed by a globally recognised degree and an optional certification from Oxford.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#cta" class="btn-primary">Request a Callback →</a>
+        <a href="#cta" class="btn-ghost">Download Brochure ↓</a>
+      </div>
+    </div>
+    <div class="lg:col-span-4">
+      <div class="hairline p-6 space-y-5">
+        <div class="flex gap-4">
+          <span class="text-3xl num font-bold">01</span>
+          <p class="text-sm leading-snug"><strong>No extra coursework.</strong> Finish your Scaler modules and earn Woolf credits as you go.</p>
+        </div>
+        <div class="rule"></div>
+        <div class="flex gap-4">
+          <span class="text-3xl num font-bold">02</span>
+          <p class="text-sm leading-snug"><strong>Globally recognised.</strong> A degree accepted across the US, Europe and Asia.</p>
+        </div>
+        <div class="rule"></div>
+        <div class="flex gap-4">
+          <span class="text-3xl num font-bold">03</span>
+          <p class="text-sm leading-snug"><strong>Optional Oxford certification.</strong> Taught by ex-MIT faculty. Stand apart.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 3. VIDEO FOLD ───────── -->
+<section id="video" class="border-b border-black bg-black">
+  <div class="max-w-[1400px] mx-auto px-6 py-10">
+    <div class="relative w-full aspect-video bg-[#0a0a0a] border border-white/20 flex items-center justify-center overflow-hidden">
+      <!-- Replace this block with an <iframe> or <video> tag when the asset is ready -->
+      <div class="absolute inset-0 checker opacity-10"></div>
+      <div class="relative text-center text-white px-6">
+        <div class="w-20 h-20 mx-auto mb-6 rounded-full border-2 border-white flex items-center justify-center">
+          <div class="w-0 h-0 border-l-[18px] border-l-white border-y-[12px] border-y-transparent ml-1"></div>
+        </div>
+        <div class="eyebrow text-white/60 mb-2">Video Placeholder</div>
+        <p class="text-white/70 text-sm max-w-md mx-auto">Drop in the Neovarsity program walkthrough here. Suggested: 60-90 second explainer with founder/learner voiceover.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 4. LOGO MARQUEE ───────── -->
+<section class="border-b border-black bg-white py-8 overflow-hidden">
+  <p class="eyebrow text-center mb-6 text-gray-500">Our learners now work at</p>
+  <div class="marquee whitespace-nowrap">
+    <div class="flex gap-16 items-center text-2xl font-bold tracking-tight text-black/80">
+      <span>Mastercard</span><span>Amazon</span><span>Microsoft</span><span>Google</span><span>Cisco</span><span>Deloitte</span><span>Accenture</span><span>ICICI Bank</span><span>EY</span><span>IBM</span><span>Fractal</span><span>Standard Chartered</span><span>Genpact</span><span>Livspace</span><span>Akaike</span><span>Grid</span><span>Gamechange</span>
+    </div>
+    <div class="flex gap-16 items-center text-2xl font-bold tracking-tight text-black/80">
+      <span>Mastercard</span><span>Amazon</span><span>Microsoft</span><span>Google</span><span>Cisco</span><span>Deloitte</span><span>Accenture</span><span>ICICI Bank</span><span>EY</span><span>IBM</span><span>Fractal</span><span>Standard Chartered</span><span>Genpact</span><span>Livspace</span><span>Akaike</span><span>Grid</span><span>Gamechange</span>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 4. WHY NOW / TRANSFORMATION GRID ───────── -->
+<section id="why" class="border-b border-black">
+  <div class="max-w-[1400px] mx-auto px-6 py-20">
+    <div class="eyebrow mb-4">Why Neovarsity</div>
+    <h2 class="display text-4xl lg:text-6xl max-w-4xl mb-6">A globally recognised Master's - without leaving your Scaler program.</h2>
+    <p class="text-lg text-gray-700 max-w-3xl mb-14">
+      While you study at Scaler, you earn credits toward a Master's degree from Woolf University. No parallel coursework, no second curriculum. The degree is accredited under ECTS - accepted by universities and employers across the US, Europe, Canada and most of the world.
+    </p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-0 border-t border-l border-black">
+      <!-- Transformation card pattern -->
+      <div class="border-r border-b border-black p-6">
+        <div class="eyebrow mb-3 text-gray-500">Non-CS Graduate</div>
+        <div class="checker h-28 mb-4"></div>
+        <p class="text-sm mb-2 text-gray-500 line-through">Filtered out by recruiters.</p>
+        <p class="text-sm font-semibold">→ Hired into tech with a Master's credential that opens the door.</p>
+      </div>
+      <div class="border-r border-b border-black p-6">
+        <div class="eyebrow mb-3 text-gray-500">Mid-Level Engineer</div>
+        <div class="checker h-28 mb-4"></div>
+        <p class="text-sm mb-2 text-gray-500 line-through">Promotion stalled at the title boundary.</p>
+        <p class="text-sm font-semibold">→ Senior role unlocked with a globally recognised degree.</p>
+      </div>
+      <div class="border-r border-b border-black p-6">
+        <div class="eyebrow mb-3 text-gray-500">Aspiring Immigrant</div>
+        <div class="checker h-28 mb-4"></div>
+        <p class="text-sm mb-2 text-gray-500 line-through">Visa apps rejected for weak credentials.</p>
+        <p class="text-sm font-semibold">→ Skilled migration paths open with ECTS + ECE.</p>
+      </div>
+      <div class="border-r border-b border-black p-6">
+        <div class="eyebrow mb-3 text-gray-500">Future PhD</div>
+        <div class="checker h-28 mb-4"></div>
+        <p class="text-sm mb-2 text-gray-500 line-through">Academic door closed without a Master's.</p>
+        <p class="text-sm font-semibold">→ 90 transferable ECTS credits keep it wide open.</p>
+      </div>
+    </div>
+
+    <div class="mt-14 grid lg:grid-cols-12 gap-8">
+      <div class="lg:col-span-7 hairline p-8">
+        <div class="eyebrow mb-3">The AI Era Shift</div>
+        <p class="text-2xl leading-snug font-light">
+          The AI era has changed what '<em>qualified</em>' looks like. Companies want engineers who can ship - but credentials still open doors. <strong>Neovarsity gives you both:</strong> the Scaler skills that get you hired, and the global degree that gets you considered everywhere.
+        </p>
+      </div>
+      <div class="lg:col-span-5 hairline p-8 bg-[var(--soft)]">
+        <div class="eyebrow mb-4">At a glance</div>
+        <div class="space-y-4 text-sm">
+          <div class="flex justify-between border-b border-black/20 pb-3"><span>Program length</span><strong>18 months</strong></div>
+          <div class="flex justify-between border-b border-black/20 pb-3"><span>Total credits</span><strong>90 ECTS</strong></div>
+          <div class="flex justify-between border-b border-black/20 pb-3"><span>Accreditation</span><strong>ECTS · ECE</strong></div>
+          <div class="flex justify-between border-b border-black/20 pb-3"><span>Awarded by</span><strong>Woolf University</strong></div>
+          <div class="flex justify-between"><span>Optional cert</span><strong>Oxford</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 5. BATCH PROFILE / FOUNDING COHORT ───────── -->
+<section class="border-b border-black bg-[var(--softer)]">
+  <div class="max-w-[1400px] mx-auto px-6 py-20">
+    <div class="eyebrow mb-4">Current Batch Profile</div>
+    <h2 class="display text-4xl lg:text-5xl mb-3 max-w-3xl">1,000+ tech professionals are already building a global career with Neovarsity.</h2>
+    <p class="text-gray-600 max-w-3xl mb-12">Your batch is the second curriculum. Here's who you'll learn alongside.</p>
+
+    <div class="grid md:grid-cols-4 gap-0 border-t border-l border-black bg-white">
+      <div class="border-r border-b border-black p-8">
+        <div class="text-5xl num font-black mb-2">4-9</div>
+        <div class="eyebrow text-gray-500">Avg years of experience</div>
+      </div>
+      <div class="border-r border-b border-black p-8">
+        <div class="text-5xl num font-black mb-2">60+</div>
+        <div class="eyebrow text-gray-500">Companies represented</div>
+      </div>
+      <div class="border-r border-b border-black p-8">
+        <div class="text-5xl num font-black mb-2">4.8<span class="text-2xl">/5</span></div>
+        <div class="eyebrow text-gray-500">Learner rating</div>
+      </div>
+      <div class="border-r border-b border-black p-8">
+        <div class="text-5xl num font-black mb-2">89.9%</div>
+        <div class="eyebrow text-gray-500">From non-IIT/NIT/BITS colleges</div>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-8 mt-12">
+      <div class="hairline p-6 bg-white">
+        <div class="eyebrow mb-5">Work Experience</div>
+        <div class="space-y-3">
+          <div><div class="flex justify-between text-sm mb-1"><span>0-2 yrs</span><strong>20%</strong></div><div class="h-2 bg-black/10"><div class="h-full bg-black" style="width:20%"></div></div></div>
+          <div><div class="flex justify-between text-sm mb-1"><span>2-4 yrs</span><strong>36%</strong></div><div class="h-2 bg-black/10"><div class="h-full bg-black" style="width:36%"></div></div></div>
+          <div><div class="flex justify-between text-sm mb-1"><span>4-7 yrs</span><strong>29%</strong></div><div class="h-2 bg-black/10"><div class="h-full bg-black" style="width:29%"></div></div></div>
+          <div><div class="flex justify-between text-sm mb-1"><span>7+ yrs</span><strong>15%</strong></div><div class="h-2 bg-black/10"><div class="h-full bg-black" style="width:15%"></div></div></div>
+        </div>
+      </div>
+      <div class="hairline p-6 bg-white">
+        <div class="eyebrow mb-5">Industry Background</div>
+        <div class="space-y-3">
+          <div><div class="flex justify-between text-sm mb-1"><span>Senior Developer</span><strong>48%</strong></div><div class="h-2 bg-black/10"><div class="h-full bg-black" style="width:48%"></div></div></div>
+          <div><div class="flex justify-between text-sm mb-1"><span>Mid-Senior Developer</span><strong>25%</strong></div><div class="h-2 bg-black/10"><div class="h-full bg-black" style="width:25%"></div></div></div>
+          <div><div class="flex justify-between text-sm mb-1"><span>Tech Lead</span><strong>20%</strong></div><div class="h-2 bg-black/10"><div class="h-full bg-black" style="width:20%"></div></div></div>
+          <div><div class="flex justify-between text-sm mb-1"><span>Other Roles</span><strong>7%</strong></div><div class="h-2 bg-black/10"><div class="h-full bg-black" style="width:7%"></div></div></div>
+        </div>
+      </div>
+      <div class="hairline p-6 bg-white">
+        <div class="eyebrow mb-5">Avg Salary Post-Scaler</div>
+        <div class="space-y-3">
+          <div class="flex items-center justify-between"><span class="text-sm">0-2 yrs</span><span class="text-2xl font-bold">17 LPA</span></div>
+          <div class="rule"></div>
+          <div class="flex items-center justify-between"><span class="text-sm">2-4 yrs</span><span class="text-2xl font-bold">32 LPA</span></div>
+          <div class="rule"></div>
+          <div class="flex items-center justify-between"><span class="text-sm">4-7 yrs</span><span class="text-2xl font-bold">58 LPA</span></div>
+          <div class="rule"></div>
+          <div class="flex items-center justify-between"><span class="text-sm">7+ yrs</span><span class="text-2xl font-bold">72 LPA</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 6. VALUE / NUMBERED LIST + VIDEO PLACEHOLDER ───────── -->
+<section class="border-b border-black">
+  <div class="max-w-[1400px] mx-auto px-6 py-20 grid lg:grid-cols-12 gap-12">
+    <div class="lg:col-span-6">
+      <div class="eyebrow mb-4">How Neovarsity Adds Value</div>
+      <h2 class="display text-4xl lg:text-5xl mb-4">Built for the AI era. Recognised everywhere.</h2>
+      <p class="text-gray-600 mb-10">Here's what you get the moment you upgrade - across curriculum, credibility, and career mobility.</p>
+
+      <div class="space-y-0 border-t border-black">
+        <details class="border-b border-black py-4 group" open>
+          <summary class="flex items-start justify-between gap-4"><div class="flex gap-4"><span class="num font-bold text-xl">01</span><span class="font-semibold">Industry-vetted curriculum, MAANG-approved</span></div><span class="chev text-2xl leading-none">+</span></summary>
+          <p class="mt-3 pl-10 text-gray-700 text-sm">Every module is designed and taught by engineers from Microsoft, Amazon, Apple, Netflix and Google.</p>
+        </details>
+        <details class="border-b border-black py-4 group">
+          <summary class="flex items-start justify-between gap-4"><div class="flex gap-4"><span class="num font-bold text-xl">02</span><span class="font-semibold">AI-first by design</span></div><span class="chev text-2xl leading-none">+</span></summary>
+          <p class="mt-3 pl-10 text-gray-700 text-sm">Curriculum built around how the industry actually works today - RAG systems, agentic design, multimodal intelligence, LLMOps and production AI.</p>
+        </details>
+        <details class="border-b border-black py-4 group">
+          <summary class="flex items-start justify-between gap-4"><div class="flex gap-4"><span class="num font-bold text-xl">03</span><span class="font-semibold">Live 1:1 mentorship</span></div><span class="chev text-2xl leading-none">+</span></summary>
+          <p class="mt-3 pl-10 text-gray-700 text-sm">Weekly classes and one-on-one mentorship with practicing industry experts - not adjunct lecturers.</p>
+        </details>
+        <details class="border-b border-black py-4 group">
+          <summary class="flex items-start justify-between gap-4"><div class="flex gap-4"><span class="num font-bold text-xl">04</span><span class="font-semibold">Hands-on AI engineering</span></div><span class="chev text-2xl leading-none">+</span></summary>
+          <p class="mt-3 pl-10 text-gray-700 text-sm">Build real systems. Ship a production-ready AI capstone you can show in interviews.</p>
+        </details>
+        <details class="border-b border-black py-4 group">
+          <summary class="flex items-start justify-between gap-4"><div class="flex gap-4"><span class="num font-bold text-xl">05</span><span class="font-semibold">Real-world business case studies</span></div><span class="chev text-2xl leading-none">+</span></summary>
+          <p class="mt-3 pl-10 text-gray-700 text-sm">Work on the messy, ambiguous datasets companies actually deal with - not toy problems.</p>
+        </details>
+        <details class="border-b border-black py-4 group">
+          <summary class="flex items-start justify-between gap-4"><div class="flex gap-4"><span class="num font-bold text-xl">06</span><span class="font-semibold">ECTS-accredited degree</span></div><span class="chev text-2xl leading-none">+</span></summary>
+          <p class="mt-3 pl-10 text-gray-700 text-sm">90 transferable credits, recognised across the US, EU, Canada and India for both jobs and higher education.</p>
+        </details>
+        <details class="border-b border-black py-4 group">
+          <summary class="flex items-start justify-between gap-4"><div class="flex gap-4"><span class="num font-bold text-xl">07</span><span class="font-semibold">ECE-recognised credits</span></div><span class="chev text-2xl leading-none">+</span></summary>
+          <p class="mt-3 pl-10 text-gray-700 text-sm">US equivalency for your academic credentials, hassle-free credit evaluation by Educational Credential Evaluators, and eligibility for global job markets.</p>
+        </details>
+        <details class="border-b border-black py-4 group">
+          <summary class="flex items-start justify-between gap-4"><div class="flex gap-4"><span class="num font-bold text-xl">08</span><span class="font-semibold">Extended placement support</span></div><span class="chev text-2xl leading-none">+</span></summary>
+          <p class="mt-3 pl-10 text-gray-700 text-sm">Six additional months of placement assistance on top of your Scaler program - for when you need it most.</p>
+        </details>
+        <details class="border-b border-black py-4 group">
+          <summary class="flex items-start justify-between gap-4"><div class="flex gap-4"><span class="num font-bold text-xl">09</span><span class="font-semibold">Optional Oxford certification</span></div><span class="chev text-2xl leading-none">+</span></summary>
+          <p class="mt-3 pl-10 text-gray-700 text-sm">Add an Advanced Business Analytics with AI certificate from Oxford - one academic credit, official alumni recognition, live sessions with ex-MIT faculty, and a final AI project.</p>
+        </details>
+      </div>
+    </div>
+
+    <div class="lg:col-span-6">
+      <div class="hairline aspect-[4/5] bg-black text-white flex flex-col justify-between p-8">
+        <div class="eyebrow text-white/60">Featured</div>
+        <div>
+          <h3 class="display text-4xl lg:text-5xl mb-6">A degree that travels with you - everywhere.</h3>
+          <p class="text-white/70 mb-8 text-sm">From a senior role in Bengaluru to a research lab in Berlin to grad school in Boston - one credential, infinite directions.</p>
+          <a href="#degree" class="inline-flex items-center gap-2 border-b border-white pb-1 font-semibold">See where it works →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 7. CURRICULUM ───────── -->
+<section id="curriculum" class="border-b border-black">
+  <div class="max-w-[1400px] mx-auto px-6 py-20">
+    <div class="eyebrow mb-4">Curriculum Snapshot</div>
+    <h2 class="display text-4xl lg:text-5xl max-w-4xl mb-4">A 90-credit Master's - a 60-credit core, and one 30-credit specialisation.</h2>
+    <p class="text-gray-600 max-w-3xl mb-12">Every module is mapped to a real industry workflow. You take the full AIML core, then pick one of three specialisation buckets based on where your career is going.</p>
+
+    <div class="hairline overflow-hidden">
+      <div class="bg-black text-white px-6 py-4 flex items-center justify-between">
+        <div><span class="eyebrow text-white/60">Core Modules</span><span class="ml-3 text-sm">Taken by everyone · 60 credits · ~52 weeks</span></div>
+        <span class="num text-sm">60 ECTS</span>
+      </div>
+      <div class="grid grid-cols-12 text-sm font-semibold border-b border-black bg-[var(--soft)]">
+        <div class="col-span-8 px-6 py-3">Module</div>
+        <div class="col-span-2 px-6 py-3 text-center">Weeks</div>
+        <div class="col-span-2 px-6 py-3 text-center">Credits</div>
+      </div>
+      <div class="text-sm">
+        <div class="grid grid-cols-12 border-b border-black/20"><div class="col-span-8 px-6 py-3">Data Foundations</div><div class="col-span-2 px-6 py-3 text-center num">4</div><div class="col-span-2 px-6 py-3 text-center num">5</div></div>
+        <div class="grid grid-cols-12 border-b border-black/20 bg-[var(--softer)]"><div class="col-span-8 px-6 py-3">Maths for ML</div><div class="col-span-2 px-6 py-3 text-center num">4</div><div class="col-span-2 px-6 py-3 text-center num">5</div></div>
+        <div class="grid grid-cols-12 border-b border-black/20"><div class="col-span-8 px-6 py-3">ML Coding: Supervised Learning</div><div class="col-span-2 px-6 py-3 text-center num">6</div><div class="col-span-2 px-6 py-3 text-center num">5</div></div>
+        <div class="grid grid-cols-12 border-b border-black/20 bg-[var(--softer)]"><div class="col-span-8 px-6 py-3">ML Coding: Unsupervised, Time Series & Recommenders</div><div class="col-span-2 px-6 py-3 text-center num">4</div><div class="col-span-2 px-6 py-3 text-center num">5</div></div>
+        <div class="grid grid-cols-12 border-b border-black/20"><div class="col-span-8 px-6 py-3">ML Coding: Neural Networks</div><div class="col-span-2 px-6 py-3 text-center num">3</div><div class="col-span-2 px-6 py-3 text-center num">5</div></div>
+        <div class="grid grid-cols-12 border-b border-black/20 bg-[var(--softer)]"><div class="col-span-8 px-6 py-3">ML Coding: Computer Vision & NLP</div><div class="col-span-2 px-6 py-3 text-center num">7</div><div class="col-span-2 px-6 py-3 text-center num">10</div></div>
+        <div class="grid grid-cols-12 border-b border-black/20"><div class="col-span-8 px-6 py-3">MLOps</div><div class="col-span-2 px-6 py-3 text-center num">8</div><div class="col-span-2 px-6 py-3 text-center num">5</div></div>
+        <div class="grid grid-cols-12 border-b border-black/20 bg-[var(--softer)]"><div class="col-span-8 px-6 py-3 font-semibold">Foundations of AI Engineering & RAG Systems</div><div class="col-span-2 px-6 py-3 text-center num">4</div><div class="col-span-2 px-6 py-3 text-center num">5</div></div>
+        <div class="grid grid-cols-12 border-b border-black/20"><div class="col-span-8 px-6 py-3 font-semibold">Agentic Design Patterns & Multi-Agent Orchestration</div><div class="col-span-2 px-6 py-3 text-center num">4</div><div class="col-span-2 px-6 py-3 text-center num">5</div></div>
+        <div class="grid grid-cols-12 border-b border-black/20 bg-[var(--softer)]"><div class="col-span-8 px-6 py-3 font-semibold">Advanced Cognitive Architectures & Multimodal Intelligence</div><div class="col-span-2 px-6 py-3 text-center num">3</div><div class="col-span-2 px-6 py-3 text-center num">5</div></div>
+        <div class="grid grid-cols-12"><div class="col-span-8 px-6 py-3 font-semibold">Fine-tuning, LLMOps and Security</div><div class="col-span-2 px-6 py-3 text-center num">5</div><div class="col-span-2 px-6 py-3 text-center num">5</div></div>
+      </div>
+    </div>
+
+    <!-- Bucket tabs -->
+    <div class="mt-12">
+      <div class="eyebrow mb-4">Pick One Specialisation Bucket · 30 credits</div>
+      <div class="flex gap-2 flex-wrap mb-6" id="bucketTabs">
+        <button class="tab hairline px-5 py-3 text-sm font-semibold" data-tab="b1" aria-selected="true">Bucket 1 - ML Depth & DSA Mastery</button>
+        <button class="tab hairline px-5 py-3 text-sm font-semibold" data-tab="b2" aria-selected="false">Bucket 2 - AI-First Product Engineering</button>
+        <button class="tab hairline px-5 py-3 text-sm font-semibold" data-tab="b3" aria-selected="false">Bucket 3 - Deployment, Data & Product</button>
+      </div>
+      <div id="b1" class="bucket hairline p-6">
+        <p class="text-gray-700 mb-4">For learners targeting top-tier engineering roles and advanced ML positions. Covers System Design, Advanced ML & Deep Learning, Advanced DSA, Big Data and Reinforcement Learning.</p>
+      </div>
+      <div id="b2" class="bucket hairline p-6 hidden">
+        <p class="text-gray-700">For learners building production AI systems. Covers OOD, design principles, machine coding, and an AI-first backend capstone that ships.</p>
+      </div>
+      <div id="b3" class="bucket hairline p-6 hidden">
+        <p class="text-gray-700">For learners moving into data engineering, forward deployment or product engineering. Covers System Design, Forward Deployment Engineering, Data Engineering, advanced DSA, and Product Management for Engineers.</p>
+      </div>
+      <p class="mt-6 text-sm text-gray-500">Total program · Core (60) + one bucket (30) = <strong class="text-black">90 ECTS credits</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 8. CROSS-PROGRAM ELECTIVES ───────── -->
+<section id="cross" class="border-b border-black bg-black text-white">
+  <div class="max-w-[1400px] mx-auto px-6 py-20">
+    <div class="eyebrow mb-4 text-white/60">Cross-Program Electives</div>
+    <h2 class="display text-4xl lg:text-6xl max-w-4xl mb-6">Pick electives from any Scaler program. At no extra cost.</h2>
+    <p class="text-xl text-white/80 max-w-3xl mb-10">Most Master's programs lock you into one track. Neovarsity doesn't.</p>
+    <p class="text-white/70 max-w-3xl mb-14">As a Neovarsity learner, you're not limited to the electives inside your own program. If you're enrolled in Academy, you can pick electives from DSML, DevOps, or AIML - and vice versa. No upgrade fee. No separate enrolment. Just open access to the full Scaler catalogue.</p>
+
+    <div class="grid md:grid-cols-3 gap-0 border-t border-l border-white/30">
+      <div class="border-r border-b border-white/30 p-6"><div class="text-3xl font-black mb-3 num">01</div><div class="font-semibold mb-2">Pick your home program</div><p class="text-sm text-white/70">Academy, DSML, DevOps, or AIML - your core curriculum stays the same.</p></div>
+      <div class="border-r border-b border-white/30 p-6"><div class="text-3xl font-black mb-3 num">02</div><div class="font-semibold mb-2">Browse the full catalogue</div><p class="text-sm text-white/70">All electives from every other Scaler program unlock for you.</p></div>
+      <div class="border-r border-b border-white/30 p-6"><div class="text-3xl font-black mb-3 num">03</div><div class="font-semibold mb-2">Add them to your track</div><p class="text-sm text-white/70">No additional payment. No paperwork. They count toward your 90 ECTS credits.</p></div>
+    </div>
+
+    <div class="mt-14">
+      <div class="eyebrow mb-5 text-white/60">Example Paths</div>
+      <div class="grid md:grid-cols-2 gap-px bg-white/30 border border-white/30">
+        <div class="bg-black p-6"><div class="eyebrow text-white/60 mb-2">Academy →</div><p>Add ML Foundations and Data Engineering from DSML to become a backend engineer who ships ML features.</p></div>
+        <div class="bg-black p-6"><div class="eyebrow text-white/60 mb-2">DSML →</div><p>Add System Design and Low-Level Design from Academy to clear senior engineering interviews.</p></div>
+        <div class="bg-black p-6"><div class="eyebrow text-white/60 mb-2">DevOps →</div><p>Add Foundations of AI Engineering & RAG Systems from AIML to step into AI platform roles.</p></div>
+        <div class="bg-black p-6"><div class="eyebrow text-white/60 mb-2">AIML →</div><p>Add Product Management for Engineers from Academy to move into AI product leadership.</p></div>
+      </div>
+    </div>
+
+    <div class="mt-10 border border-white/30 p-6 flex items-center justify-between gap-4 flex-wrap">
+      <p class="text-sm italic">Available to all Neovarsity learners. Included in your upgrade fee. No hidden cost.</p>
+      <a href="#cta" class="btn-ghost bg-white text-black border-white hover:bg-black hover:text-white">Talk to a counsellor →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 9. INSTRUCTORS ───────── -->
+<section id="instructors" class="border-b border-black">
+  <div class="max-w-[1400px] mx-auto px-6 py-20">
+    <div class="eyebrow mb-4">Know Your Instructors</div>
+    <h2 class="display text-4xl lg:text-5xl max-w-3xl mb-12">Learn from people who've built what you want to build.</h2>
+
+    <div class="scrollx flex gap-6 overflow-x-auto pb-6">
+      <div class="hairline min-w-[340px] flex-1 max-w-sm p-6">
+        <div class="checker w-24 h-24 mb-5 rounded-full"></div>
+        <div class="eyebrow mb-2 text-gray-500">Ex-Microsoft</div>
+        <h3 class="text-xl font-bold mb-1">Shivank Agarwal</h3>
+        <p class="text-sm text-gray-600 mb-4">Senior VP, Data Science & Head of AIML, Scaler. Ex-Microsoft, Inmobi, Oracle.</p>
+        <div class="grid grid-cols-3 gap-3 text-xs border-t border-black pt-4">
+          <div><div class="font-bold num">4.8★</div><div class="text-gray-500">Rating</div></div>
+          <div><div class="font-bold num">7,000+</div><div class="text-gray-500">Learners</div></div>
+          <div><div class="font-bold num">14+ yrs</div><div class="text-gray-500">Experience</div></div>
+        </div>
+      </div>
+      <div class="hairline min-w-[340px] flex-1 max-w-sm p-6">
+        <div class="checker w-24 h-24 mb-5 rounded-full"></div>
+        <div class="eyebrow mb-2 text-gray-500">Ex-Google</div>
+        <h3 class="text-xl font-bold mb-1">Naman Bhalla</h3>
+        <p class="text-sm text-gray-600 mb-4">Head of AI Companion, Scaler. Ex-Google. Google Kickstart Global Rank 135. ICPC Kanpur Regionals 2019-20 Rank 37.</p>
+        <div class="grid grid-cols-3 gap-3 text-xs border-t border-black pt-4">
+          <div><div class="font-bold num">4.8★</div><div class="text-gray-500">Rating</div></div>
+          <div><div class="font-bold num">13,000+</div><div class="text-gray-500">Learners</div></div>
+          <div><div class="font-bold num">5+ yrs</div><div class="text-gray-500">Experience</div></div>
+        </div>
+      </div>
+      <div class="hairline min-w-[340px] flex-1 max-w-sm p-6 bg-[var(--soft)] flex items-center justify-center">
+        <p class="text-center text-gray-600 text-sm">Full faculty roster - all practicing engineers and research leads - shared on your 1:1 counsellor call.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 10. TESTIMONIALS ───────── -->
+<section class="border-b border-black bg-[var(--softer)]">
+  <div class="max-w-[1400px] mx-auto px-6 py-20">
+    <div class="eyebrow mb-4">Learner Stories</div>
+    <h2 class="display text-4xl lg:text-5xl max-w-3xl mb-12">From career switch to senior engineer - the Neovarsity proof.</h2>
+
+    <div class="scrollx flex gap-6 overflow-x-auto pb-6">
+      <figure class="hairline min-w-[380px] max-w-md bg-white p-7">
+        <blockquote class="text-lg leading-snug mb-6">"I graduated from NIT Calicut but wanted stronger CS depth. With AI moving fast, Neovarsity's electives in Data Engineering and GenAI accelerated my growth. The degree gave me the edge I was missing."</blockquote>
+        <figcaption class="border-t border-black pt-4">
+          <div class="font-bold">Nitish</div>
+          <div class="text-sm text-gray-600">Senior Principal Engineer · Gamechange</div>
+        </figcaption>
+      </figure>
+      <figure class="hairline min-w-[380px] max-w-md bg-white p-7">
+        <blockquote class="text-lg leading-snug mb-6">"I came from a Fine Arts background. Neovarsity gave me credibility, real CS fundamentals, and the confidence to land my first tech role."</blockquote>
+        <figcaption class="border-t border-black pt-4">
+          <div class="font-bold">Mrigakshi</div>
+          <div class="text-sm text-gray-600">Frontend Developer · Grid</div>
+        </figcaption>
+      </figure>
+      <figure class="hairline min-w-[380px] max-w-md bg-white p-7">
+        <blockquote class="text-lg leading-snug mb-6">"I was in a non-tech role and needed credibility for a domain shift. The Master's gave me a recognised degree, hands-on assignments, and real coding skill - together."</blockquote>
+        <figcaption class="border-t border-black pt-4">
+          <div class="font-bold">Kamal</div>
+          <div class="text-sm text-gray-600">Data Scientist II · Akaike Technologies</div>
+        </figcaption>
+      </figure>
+      <figure class="hairline min-w-[380px] max-w-md bg-white p-7">
+        <blockquote class="text-lg leading-snug mb-6">"After 12 years, switching into data science needs proof of effort. A full Master's - not just a course certificate - is that proof."</blockquote>
+        <figcaption class="border-t border-black pt-4">
+          <div class="font-bold">Vivek Bhalekar</div>
+          <div class="text-sm text-gray-600">12 yrs · Web Development → Data Science</div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 11. POSSIBLE PATHS (CASE STUDIES TAB STYLE) ───────── -->
+<section class="border-b border-black">
+  <div class="max-w-[1400px] mx-auto px-6 py-20">
+    <div class="eyebrow mb-4">Possible Paths</div>
+    <h2 class="display text-4xl lg:text-5xl max-w-3xl mb-4">One program. Many directions.</h2>
+    <p class="text-gray-600 max-w-3xl mb-12">Neovarsity isn't just a degree - it's optionality. Here's where our learners go after graduating.</p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-black">
+      <div class="border-r border-b border-black p-6"><div class="text-2xl font-bold mb-3">→</div><h3 class="font-bold mb-2">Senior tech roles in top MNCs</h3><p class="text-sm text-gray-700">Break into senior developer, ML engineer, or AI engineer positions at companies that filter for credentials.</p></div>
+      <div class="border-r border-b border-black p-6"><div class="text-2xl font-bold mb-3">→</div><h3 class="font-bold mb-2">International placements</h3><p class="text-sm text-gray-700">ECE approval and ECTS accreditation make you eligible for jobs in the US, Canada, EU and beyond.</p></div>
+      <div class="border-r border-b border-black p-6"><div class="text-2xl font-bold mb-3">→</div><h3 class="font-bold mb-2">R&D and research roles</h3><p class="text-sm text-gray-700">Double your chances at R&D positions that require a Master's-level credential.</p></div>
+      <div class="border-r border-b border-black p-6"><div class="text-2xl font-bold mb-3">→</div><h3 class="font-bold mb-2">Higher education (PhD or 2nd Master's)</h3><p class="text-sm text-gray-700">Transfer your 90 ECTS credits toward further academic study anywhere in the world.</p></div>
+      <div class="border-r border-b border-black p-6"><div class="text-2xl font-bold mb-3">→</div><h3 class="font-bold mb-2">Immigration & global mobility</h3><p class="text-sm text-gray-700">A recognised foreign degree strengthens skilled migration and work visa applications.</p></div>
+      <div class="border-r border-b border-black p-6"><div class="text-2xl font-bold mb-3">→</div><h3 class="font-bold mb-2">Promotions & senior leadership</h3><p class="text-sm text-gray-700">Use the degree as the credential that unlocks the next title at your current company.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 12. WHO IT'S FOR ───────── -->
+<section class="border-b border-black bg-[var(--softer)]">
+  <div class="max-w-[1400px] mx-auto px-6 py-20">
+    <div class="eyebrow mb-4">Who Neovarsity Is For</div>
+    <h2 class="display text-4xl lg:text-5xl max-w-3xl mb-12">If any of this sounds like you - Neovarsity was built for you.</h2>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-black border border-black">
+      <div class="bg-white p-7"><div class="eyebrow text-gray-500 mb-3">01</div><h3 class="font-bold mb-2">The non-CS graduate trying to break into tech</h3><p class="text-sm text-gray-700">You did B.Com, Mechanical, ECE, or Fine Arts. You can code now - but recruiters still filter on the degree. Neovarsity fixes that.</p></div>
+      <div class="bg-white p-7"><div class="eyebrow text-gray-500 mb-3">02</div><h3 class="font-bold mb-2">The senior engineer chasing R&D</h3><p class="text-sm text-gray-700">You want to work on the hard problems at research-led companies. A Master's doubles your callback rate.</p></div>
+      <div class="bg-white p-7"><div class="eyebrow text-gray-500 mb-3">03</div><h3 class="font-bold mb-2">The professional planning to move abroad</h3><p class="text-sm text-gray-700">You need a credential that immigration officers and foreign employers recognise. ECTS + ECE delivers that.</p></div>
+      <div class="bg-white p-7"><div class="eyebrow text-gray-500 mb-3">04</div><h3 class="font-bold mb-2">The mid-level developer eyeing a senior role</h3><p class="text-sm text-gray-700">Your skills are there. The title isn't moving. A globally recognised Master's tips the balance at promotion time.</p></div>
+      <div class="bg-white p-7"><div class="eyebrow text-gray-500 mb-3">05</div><h3 class="font-bold mb-2">The aspiring PhD candidate</h3><p class="text-sm text-gray-700">You want to keep the academic door open. 90 transferable ECTS credits keep it wide open.</p></div>
+      <div class="bg-white p-7"><div class="eyebrow text-gray-500 mb-3">06</div><h3 class="font-bold mb-2">The career-switcher in their 30s</h3><p class="text-sm text-gray-700">You've done 10+ years in one field. A Master's proves the seriousness of your second act.</p></div>
+    </div>
+
+    <div class="hairline mt-10 p-6 bg-white">
+      <div class="eyebrow mb-3">Eligibility</div>
+      <ul class="grid md:grid-cols-2 gap-3 text-sm">
+        <li class="flex gap-3"><span>✓</span>Bachelor's degree in any discipline (BSc, B.Tech, BCA, or 3-4 year equivalent)</li>
+        <li class="flex gap-3"><span>✓</span>At least 1 year of professional experience</li>
+        <li class="flex gap-3"><span>✓</span>No prior Computer Science background required</li>
+        <li class="flex gap-3"><span>✓</span>Diploma-holders: case-by-case - talk to a counsellor.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 13. PLACEMENT ───────── -->
+<section id="placements" class="border-b border-black">
+  <div class="max-w-[1400px] mx-auto px-6 py-20">
+    <div class="grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-5">
+        <div class="eyebrow mb-4">Placement Support & Network</div>
+        <h2 class="display text-4xl lg:text-5xl mb-6">1,200+ hiring partners. 6 extra months of dedicated support.</h2>
+        <p class="text-gray-700 mb-8">Mock interviews, resume reviews, referrals, and direct hiring pipelines. Neovarsity extends your Scaler placement window by six months - giving you more runway to land the right role, not just any role.</p>
+        <a href="#cta" class="btn-primary">Talk to a counsellor →</a>
+      </div>
+      <div class="lg:col-span-7">
+        <div class="grid grid-cols-4 gap-px bg-black border border-black text-center text-sm font-semibold">
+          <div class="bg-white py-6">TCS</div><div class="bg-white py-6">Cognizant</div><div class="bg-white py-6">Deloitte</div><div class="bg-white py-6">ICICI Bank</div>
+          <div class="bg-white py-6">EY</div><div class="bg-white py-6">Accenture</div><div class="bg-white py-6">Amazon</div><div class="bg-white py-6">Impact Analytics</div>
+          <div class="bg-white py-6">IBM</div><div class="bg-white py-6">Mindtree</div><div class="bg-white py-6">Cisco</div><div class="bg-white py-6">Amex</div>
+          <div class="bg-white py-6">EXL</div><div class="bg-white py-6">Fractal</div><div class="bg-white py-6">MPL</div><div class="bg-white py-6">MathCo</div>
+          <div class="bg-white py-6">Std Chartered</div><div class="bg-white py-6">Genpact</div><div class="bg-white py-6">ZS</div><div class="bg-white py-6">Morningstar</div>
+          <div class="bg-white py-6">Infosys</div><div class="bg-white py-6">Regeneron</div><div class="bg-white py-6">Mitel</div><div class="bg-white py-6 font-bold">+1,170 more</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 14. DEGREE & RECOGNITION ───────── -->
+<section id="degree" class="border-b border-black bg-black text-white">
+  <div class="max-w-[1400px] mx-auto px-6 py-20">
+    <div class="grid lg:grid-cols-12 gap-10">
+      <div class="lg:col-span-7">
+        <div class="eyebrow mb-4 text-white/60">The Degree & Its Recognition</div>
+        <h2 class="display text-4xl lg:text-5xl mb-6">A Master of Science in Computer Science that the world actually recognises.</h2>
+        <div class="space-y-6 mt-10">
+          <div class="border border-white/30 p-6">
+            <div class="eyebrow text-white/60 mb-2">ECTS Accredited</div>
+            <p>The European Credit Transfer and Accumulation System is the credit standard used by universities across the EU and accepted globally. <strong>90 transferable credits.</strong></p>
+          </div>
+          <div class="border border-white/30 p-6">
+            <div class="eyebrow text-white/60 mb-2">ECE Approved</div>
+            <p>Educational Credential Evaluators provides US equivalency for your academic credentials - making the degree work for US employers, universities and immigration.</p>
+          </div>
+        </div>
+      </div>
+      <div class="lg:col-span-5">
+        <div class="eyebrow mb-5 text-white/60">Where It Works</div>
+        <div class="space-y-3">
+          <div class="border border-white/30 p-5"><div class="font-bold mb-1">United States</div><p class="text-sm text-white/70">Job applications, H-1B, higher education.</p></div>
+          <div class="border border-white/30 p-5"><div class="font-bold mb-1">Canada & EU</div><p class="text-sm text-white/70">Work visas, skilled migration, employer recognition.</p></div>
+          <div class="border border-white/30 p-5"><div class="font-bold mb-1">India</div><p class="text-sm text-white/70">Promotions, senior role applications, PhD entry.</p></div>
+          <div class="border border-white/30 p-5"><div class="font-bold mb-1">Asia & Middle East</div><p class="text-sm text-white/70">Multinational hiring filters.</p></div>
+        </div>
+        <a href="#cta" class="mt-6 inline-flex items-center gap-2 border-b border-white pb-1 font-semibold">View Sample Degree →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 15. WHY SCALER TRUST ───────── -->
+<section class="border-b border-black">
+  <div class="max-w-[1400px] mx-auto px-6 py-20">
+    <div class="eyebrow mb-4">Why Scaler</div>
+    <h2 class="display text-4xl lg:text-5xl max-w-3xl mb-12">A legacy built on outcomes. A curriculum built for now.</h2>
+    <div class="grid md:grid-cols-3 gap-0 border-t border-l border-black">
+      <div class="border-r border-b border-black p-8">
+        <div class="text-3xl font-black mb-4 num">01</div>
+        <h3 class="font-bold mb-3">Outcomes, not just hours</h3>
+        <p class="text-sm text-gray-700">10,000+ learners hired into senior roles. Average salary uplift of 2-3× across experience bands.</p>
+      </div>
+      <div class="border-r border-b border-black p-8">
+        <div class="text-3xl font-black mb-4 num">02</div>
+        <h3 class="font-bold mb-3">Curriculum that stays current</h3>
+        <p class="text-sm text-gray-700">Every module is updated as the industry shifts - RAG, agents, LLMOps were live the moment the market needed them.</p>
+      </div>
+      <div class="border-r border-b border-black p-8">
+        <div class="text-3xl font-black mb-4 num">03</div>
+        <h3 class="font-bold mb-3">Exposure to frontier AI</h3>
+        <p class="text-sm text-gray-700">Hands-on projects built on the same tools shipping at FAANG and frontier AI labs today.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 16. PRICING / CTA ───────── -->
+<section id="cta" class="border-b border-black bg-[var(--soft)]">
+  <div class="max-w-[1400px] mx-auto px-6 py-20 grid lg:grid-cols-12 gap-10 items-center">
+    <div class="lg:col-span-7">
+      <div class="eyebrow mb-4">Your Next Step</div>
+      <h2 class="display text-4xl lg:text-6xl mb-6">Your skills already deserve the degree. Make it official.</h2>
+      <p class="text-gray-700 max-w-2xl mb-8">Book a 15-minute call with a Neovarsity counsellor. Get your eligibility checked, your fee structure explained, and your questions answered.</p>
+      <div class="flex flex-wrap gap-4">
+        <a href="#" class="btn-primary">Book Your 1:1 Call →</a>
+        <a href="#" class="btn-ghost">Download Brochure ↓</a>
+      </div>
+      <p class="text-sm text-gray-500 mt-6">Talk to us: 080-4793-9623 · Mon-Sun, 9 AM - 9 PM IST</p>
+    </div>
+    <div class="lg:col-span-5">
+      <div class="hairline bg-white p-7">
+        <div class="eyebrow mb-3">What's included in the upgrade</div>
+        <ul class="space-y-3 text-sm">
+          <li class="flex gap-3"><span>✓</span>ECTS-accredited Master's degree documentation</li>
+          <li class="flex gap-3"><span>✓</span>Live program extension + additional electives</li>
+          <li class="flex gap-3"><span>✓</span>Free cross-program electives across Academy, DSML, DevOps & AIML</li>
+          <li class="flex gap-3"><span>✓</span>+6 months extended placement support</li>
+          <li class="flex gap-3"><span>✓</span>Optional Oxford certification</li>
+        </ul>
+        <div class="rule mt-5 pt-5 text-xs text-gray-500">Single upgrade fee. Exact amount shared on your 1:1 counsellor call - varies by program and batch.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 17. FAQ ───────── -->
+<section id="faq" class="border-b border-black">
+  <div class="max-w-[1400px] mx-auto px-6 py-20 grid lg:grid-cols-12 gap-10">
+    <div class="lg:col-span-4">
+      <div class="eyebrow mb-4">FAQs</div>
+      <h2 class="display text-4xl lg:text-5xl">Everything you'd ask a counsellor.</h2>
+    </div>
+    <div class="lg:col-span-8 border-t border-black">
+      <details class="border-b border-black py-5"><summary class="flex items-center justify-between font-semibold">Who's eligible to upgrade to Neovarsity?<span class="chev text-2xl">+</span></summary><p class="mt-3 text-gray-700">Anyone with an undergraduate degree in any field and at least one year of professional experience. Diploma-holders: case-by-case - talk to a counsellor.</p></details>
+      <details class="border-b border-black py-5"><summary class="flex items-center justify-between font-semibold">How long is the program?<span class="chev text-2xl">+</span></summary><p class="mt-3 text-gray-700">18 months from the date of enrolment. Extendable up to 24 months if you use a Pause/Reset. Beyond that requires program admin approval.</p></details>
+      <details class="border-b border-black py-5"><summary class="flex items-center justify-between font-semibold">When do I get access to the modules?<span class="chev text-2xl">+</span></summary><p class="mt-3 text-gray-700">Immediately on enrolment. All degree modules unlock the moment your enrolment is confirmed.</p></details>
+      <details class="border-b border-black py-5"><summary class="flex items-center justify-between font-semibold">Is the curriculum different from regular Scaler?<span class="chev text-2xl">+</span></summary><p class="mt-3 text-gray-700">Your Scaler curriculum stays exactly the same. Neovarsity adds on top - additional electives, live AI/ML classes, and the modules that earn you the Woolf credits.</p></details>
+      <details class="border-b border-black py-5"><summary class="flex items-center justify-between font-semibold">What additional modules do I get?<span class="chev text-2xl">+</span></summary><p class="mt-3 text-gray-700">Electives include: ML Foundations (Python, Probability & Stats, Core, Product Analytics), Data Engineering 1 & 2, DSA for Competitive Programming, Product Management for Engineers, and the unchosen specialisation from your base program. Plus recorded modules in Advanced Programming, Low-Level Design, Advanced Software Engineering, Backend Project, and High-Level Design.</p></details>
+      <details class="border-b border-black py-5"><summary class="flex items-center justify-between font-semibold">What does the upgrade cost?<span class="chev text-2xl">+</span></summary><p class="mt-3 text-gray-700">There's a single upgrade fee that covers degree documentation, the live program extension, additional electives, and extended placement support. Counsellors share the exact number on your 1:1 call - it varies slightly by program and batch.</p></details>
+      <details class="border-b border-black py-5"><summary class="flex items-center justify-between font-semibold">Is the Master's degree recognised in India?<span class="chev text-2xl">+</span></summary><p class="mt-3 text-gray-700">Woolf is a foreign institute and isn't recognised by UGC/AICTE. But the degree is ECTS-accredited and ECE-approved - recognised globally, including by Indian employers and most international universities. The same rule applies to degrees from foreign institutions like Oxford.</p></details>
+      <details class="border-b border-black py-5"><summary class="flex items-center justify-between font-semibold">Can I use the degree for a PhD or further studies?<span class="chev text-2xl">+</span></summary><p class="mt-3 text-gray-700">Yes. 90 ECTS credits are transferable toward further academic programs in most of the world.</p></details>
+      <details class="border-b border-black py-5"><summary class="flex items-center justify-between font-semibold">Will Neovarsity add to my Scaler workload?<span class="chev text-2xl">+</span></summary><p class="mt-3 text-gray-700">No. The core idea is no extra effort - you complete the Scaler modules you'd be doing anyway, and they count toward the Master's. The additional electives are how you specialise.</p></details>
+      <details class="border-b border-black py-5"><summary class="flex items-center justify-between font-semibold">What is the Oxford certification, and is it included?<span class="chev text-2xl">+</span></summary><p class="mt-3 text-gray-700">It's the 'Advanced Business Analytics with AI' certification from Oxford. It's optional but recommended. You get 1 academic credit, official Oxford alumni recognition, hands-on case studies, a live session with ex-MIT faculty, and a final AI project.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 18. PARTNER BANNER ───────── -->
+<section class="border-b border-black bg-black text-white">
+  <div class="max-w-[1400px] mx-auto px-6 py-14 grid md:grid-cols-12 gap-10 items-center">
+    <div class="md:col-span-4">
+      <div class="checker h-32 bg-white"></div>
+    </div>
+    <div class="md:col-span-8">
+      <div class="eyebrow mb-3 text-white/60">Awarded by Woolf University</div>
+      <h3 class="display text-3xl mb-4">Master of Science in Computer Science - recognised by ECTS, approved by ECE.</h3>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+        <div class="border border-white/30 p-3 text-center">90 ECTS Credits</div>
+        <div class="border border-white/30 p-3 text-center">US Equivalency</div>
+        <div class="border border-white/30 p-3 text-center">Global Recognition</div>
+        <div class="border border-white/30 p-3 text-center">Transferable</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── 19. FOOTER ───────── -->
+<footer class="bg-white">
+  <div class="max-w-[1400px] mx-auto px-6 py-14 grid md:grid-cols-12 gap-8 text-sm">
+    <div class="md:col-span-4">
+      <div class="font-black text-2xl mb-4">SCALER<span class="text-gray-400">·</span>NEOVARSITY</div>
+      <p class="text-gray-600 mb-4">A globally recognised Master's in Computer Science - built into your Scaler journey.</p>
+      <p class="text-xs text-gray-500">© 2026 InterviewBit Technologies Pvt. Ltd. All Rights Reserved.</p>
+    </div>
+    <div class="md:col-span-2">
+      <div class="eyebrow mb-3">Program</div>
+      <ul class="space-y-2 text-gray-700">
+        <li><a href="#why">Why Neovarsity</a></li>
+        <li><a href="#curriculum">Curriculum</a></li>
+        <li><a href="#cross">Cross-Program</a></li>
+        <li><a href="#degree">Degree</a></li>
+      </ul>
+    </div>
+    <div class="md:col-span-2">
+      <div class="eyebrow mb-3">Programs</div>
+      <ul class="space-y-2 text-gray-700">
+        <li>Scaler Academy</li>
+        <li>Scaler DSML</li>
+        <li>Scaler DevOps</li>
+        <li>Scaler AIML</li>
+      </ul>
+    </div>
+    <div class="md:col-span-2">
+      <div class="eyebrow mb-3">Resources</div>
+      <ul class="space-y-2 text-gray-700">
+        <li>Blog</li>
+        <li>Events</li>
+        <li>Alumni Stories</li>
+        <li>Careers</li>
+      </ul>
+    </div>
+    <div class="md:col-span-2">
+      <div class="eyebrow mb-3">Contact</div>
+      <ul class="space-y-2 text-gray-700">
+        <li>080-4793-9623</li>
+        <li>Mon-Sun, 9-9 IST</li>
+        <li><a href="#cta" class="underline-link">Request Callback</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-black">
+    <p class="max-w-[1400px] mx-auto px-6 py-5 text-xs text-gray-500">Disclaimer: Woolf is a foreign institution not recognised by UGC/AICTE. The Master's degree it awards is ECTS-accredited and accepted globally, similar to degrees from other foreign universities such as Oxford. Admission and the final degree decision rest with Woolf.</p>
+  </div>
+</footer>
+
+<script>
+  // Bucket tab switcher
+  const tabs = document.querySelectorAll('#bucketTabs .tab');
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x => x.setAttribute('aria-selected', 'false'));
+    t.setAttribute('aria-selected','true');
+    document.querySelectorAll('.bucket').forEach(b => b.classList.add('hidden'));
+    document.getElementById(t.dataset.tab).classList.remove('hidden');
+  }));
+</script>
+</body>
+</html>
