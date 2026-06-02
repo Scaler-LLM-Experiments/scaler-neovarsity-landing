@@ -15,10 +15,10 @@
   .eyebrow{font-size:11px;letter-spacing:0.22em;text-transform:uppercase;font-weight:600}
   .rule{border-top:1px solid #111}
   .hairline{border:1px solid #111}
-  .btn-primary{background:#000;color:#fff;border:1px solid #000;padding:14px 22px;font-weight:600;display:inline-flex;align-items:center;gap:8px;transition:all .15s}
-  .btn-primary:hover{background:#fff;color:#000}
-  .btn-ghost{background:#fff;color:#000;border:1px solid #000;padding:14px 22px;font-weight:600;display:inline-flex;align-items:center;gap:8px;transition:all .15s}
-  .btn-ghost:hover{background:#000;color:#fff}
+  .btn-primary,.btn-ghost{padding:14px 22px;font-weight:600;display:inline-flex;align-items:center;gap:8px;border:1px solid #c4c4c4;background:#ededed;color:#9a9a9a;pointer-events:none;cursor:not-allowed;opacity:0.7}
+  .btn-primary:hover,.btn-ghost:hover{background:#ededed;color:#9a9a9a}
+  a[href^="#cta"],a[href="#"]{pointer-events:none;cursor:not-allowed}
+  .underline-link{border-bottom:1px solid #c4c4c4;padding-bottom:2px;color:#9a9a9a;pointer-events:none;cursor:not-allowed}
   .num{font-feature-settings:"tnum","lnum"}
   .marquee{display:flex;gap:64px;animation:scroll 40s linear infinite;width:max-content}
   @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -133,35 +133,7 @@
       While you study at Scaler, you earn credits toward a Master's degree from Woolf University. No parallel coursework, no second curriculum. The degree is accredited under ECTS - accepted by universities and employers across the US, Europe, Canada and most of the world.
     </p>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-0 border-t border-l border-black">
-      <!-- Transformation card pattern -->
-      <div class="border-r border-b border-black p-6">
-        <div class="eyebrow mb-3 text-gray-500">Non-CS Graduate</div>
-        <div class="checker h-28 mb-4"></div>
-        <p class="text-sm mb-2 text-gray-500 line-through">Filtered out by recruiters.</p>
-        <p class="text-sm font-semibold">→ Hired into tech with a Master's credential that opens the door.</p>
-      </div>
-      <div class="border-r border-b border-black p-6">
-        <div class="eyebrow mb-3 text-gray-500">Mid-Level Engineer</div>
-        <div class="checker h-28 mb-4"></div>
-        <p class="text-sm mb-2 text-gray-500 line-through">Promotion stalled at the title boundary.</p>
-        <p class="text-sm font-semibold">→ Senior role unlocked with a globally recognised degree.</p>
-      </div>
-      <div class="border-r border-b border-black p-6">
-        <div class="eyebrow mb-3 text-gray-500">Aspiring Immigrant</div>
-        <div class="checker h-28 mb-4"></div>
-        <p class="text-sm mb-2 text-gray-500 line-through">Visa apps rejected for weak credentials.</p>
-        <p class="text-sm font-semibold">→ Skilled migration paths open with ECTS + ECE.</p>
-      </div>
-      <div class="border-r border-b border-black p-6">
-        <div class="eyebrow mb-3 text-gray-500">Future PhD</div>
-        <div class="checker h-28 mb-4"></div>
-        <p class="text-sm mb-2 text-gray-500 line-through">Academic door closed without a Master's.</p>
-        <p class="text-sm font-semibold">→ 90 transferable ECTS credits keep it wide open.</p>
-      </div>
-    </div>
-
-    <div class="mt-14 grid lg:grid-cols-12 gap-8">
+    <div class="grid lg:grid-cols-12 gap-8">
       <div class="lg:col-span-7 hairline p-8">
         <div class="eyebrow mb-3">The AI Era Shift</div>
         <p class="text-2xl leading-snug font-light">
@@ -309,7 +281,7 @@
   <div class="max-w-[1400px] mx-auto px-6 py-20">
     <div class="eyebrow mb-4">Curriculum Snapshot</div>
     <h2 class="display text-4xl lg:text-5xl max-w-4xl mb-4">A 90-credit Master's - a 60-credit core, and one 30-credit specialisation.</h2>
-    <p class="text-gray-600 max-w-3xl mb-12">Every module is mapped to a real industry workflow. You take the full AIML core, then pick one of three specialisation buckets based on where your career is going.</p>
+    <p class="text-gray-600 max-w-3xl mb-12">Every module is mapped to a real industry workflow. You take the full Advanced AI & Machine Learning core, then pick one of three specialisation buckets based on where your career is going.</p>
 
     <div class="hairline overflow-hidden">
       <div class="bg-black text-white px-6 py-4 flex items-center justify-between">
@@ -364,10 +336,10 @@
     <div class="eyebrow mb-4 text-white/60">Cross-Program Electives</div>
     <h2 class="display text-4xl lg:text-6xl max-w-4xl mb-6">Pick electives from any Scaler program. At no extra cost.</h2>
     <p class="text-xl text-white/80 max-w-3xl mb-10">Most Master's programs lock you into one track. Neovarsity doesn't.</p>
-    <p class="text-white/70 max-w-3xl mb-14">As a Neovarsity learner, you're not limited to the electives inside your own program. If you're enrolled in Academy, you can pick electives from DSML, DevOps, or AIML - and vice versa. No upgrade fee. No separate enrolment. Just open access to the full Scaler catalogue.</p>
+    <p class="text-white/70 max-w-3xl mb-14">As a Neovarsity learner, you're not limited to the electives inside your own program. If you're enrolled in Modern Software and AI Engineering, you can pick electives from Modern Data Science and ML with specialisation in AI, DevOps, Cloud & AI Platform Engineering, or Advanced AI & Machine Learning - and vice versa. No upgrade fee. No separate enrolment. Just open access to the full Scaler catalogue.</p>
 
     <div class="grid md:grid-cols-3 gap-0 border-t border-l border-white/30">
-      <div class="border-r border-b border-white/30 p-6"><div class="text-3xl font-black mb-3 num">01</div><div class="font-semibold mb-2">Pick your home program</div><p class="text-sm text-white/70">Academy, DSML, DevOps, or AIML - your core curriculum stays the same.</p></div>
+      <div class="border-r border-b border-white/30 p-6"><div class="text-3xl font-black mb-3 num">01</div><div class="font-semibold mb-2">Pick your home program</div><p class="text-sm text-white/70">Modern Software and AI Engineering, Modern Data Science and ML with specialisation in AI, DevOps, Cloud & AI Platform Engineering, or Advanced AI & Machine Learning - your core curriculum stays the same.</p></div>
       <div class="border-r border-b border-white/30 p-6"><div class="text-3xl font-black mb-3 num">02</div><div class="font-semibold mb-2">Browse the full catalogue</div><p class="text-sm text-white/70">All electives from every other Scaler program unlock for you.</p></div>
       <div class="border-r border-b border-white/30 p-6"><div class="text-3xl font-black mb-3 num">03</div><div class="font-semibold mb-2">Add them to your track</div><p class="text-sm text-white/70">No additional payment. No paperwork. They count toward your 90 ECTS credits.</p></div>
     </div>
@@ -375,10 +347,10 @@
     <div class="mt-14">
       <div class="eyebrow mb-5 text-white/60">Example Paths</div>
       <div class="grid md:grid-cols-2 gap-px bg-white/30 border border-white/30">
-        <div class="bg-black p-6"><div class="eyebrow text-white/60 mb-2">Academy →</div><p>Add ML Foundations and Data Engineering from DSML to become a backend engineer who ships ML features.</p></div>
-        <div class="bg-black p-6"><div class="eyebrow text-white/60 mb-2">DSML →</div><p>Add System Design and Low-Level Design from Academy to clear senior engineering interviews.</p></div>
-        <div class="bg-black p-6"><div class="eyebrow text-white/60 mb-2">DevOps →</div><p>Add Foundations of AI Engineering & RAG Systems from AIML to step into AI platform roles.</p></div>
-        <div class="bg-black p-6"><div class="eyebrow text-white/60 mb-2">AIML →</div><p>Add Product Management for Engineers from Academy to move into AI product leadership.</p></div>
+        <div class="bg-black p-6"><div class="eyebrow text-white/60 mb-2">Modern Software and AI Engineering →</div><p>Add ML Foundations and Data Engineering from Modern Data Science and ML with specialisation in AI to become a backend engineer who ships ML features.</p></div>
+        <div class="bg-black p-6"><div class="eyebrow text-white/60 mb-2">Modern Data Science and ML with specialisation in AI →</div><p>Add System Design and Low-Level Design from Modern Software and AI Engineering to clear senior engineering interviews.</p></div>
+        <div class="bg-black p-6"><div class="eyebrow text-white/60 mb-2">DevOps, Cloud & AI Platform Engineering →</div><p>Add Foundations of AI Engineering & RAG Systems from Advanced AI & Machine Learning to step into AI platform roles.</p></div>
+        <div class="bg-black p-6"><div class="eyebrow text-white/60 mb-2">Advanced AI & Machine Learning →</div><p>Add Product Management for Engineers from Modern Software and AI Engineering to move into AI product leadership.</p></div>
       </div>
     </div>
 
@@ -400,7 +372,7 @@
         <div class="checker w-24 h-24 mb-5 rounded-full"></div>
         <div class="eyebrow mb-2 text-gray-500">Ex-Microsoft</div>
         <h3 class="text-xl font-bold mb-1">Shivank Agarwal</h3>
-        <p class="text-sm text-gray-600 mb-4">Senior VP, Data Science & Head of AIML, Scaler. Ex-Microsoft, Inmobi, Oracle.</p>
+        <p class="text-sm text-gray-600 mb-4">Senior VP, Data Science & Head of Advanced AI & Machine Learning, Scaler. Ex-Microsoft, Inmobi, Oracle.</p>
         <div class="grid grid-cols-3 gap-3 text-xs border-t border-black pt-4">
           <div><div class="font-bold num">4.8★</div><div class="text-gray-500">Rating</div></div>
           <div><div class="font-bold num">7,000+</div><div class="text-gray-500">Learners</div></div>
@@ -464,37 +436,55 @@
   </div>
 </section>
 
-<!-- ───────── 11. POSSIBLE PATHS (CASE STUDIES TAB STYLE) ───────── -->
-<section class="border-b border-black">
-  <div class="max-w-[1400px] mx-auto px-6 py-20">
-    <div class="eyebrow mb-4">Possible Paths</div>
-    <h2 class="display text-4xl lg:text-5xl max-w-3xl mb-4">One program. Many directions.</h2>
-    <p class="text-gray-600 max-w-3xl mb-12">Neovarsity isn't just a degree - it's optionality. Here's where our learners go after graduating.</p>
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-black">
-      <div class="border-r border-b border-black p-6"><div class="text-2xl font-bold mb-3">→</div><h3 class="font-bold mb-2">Senior tech roles in top MNCs</h3><p class="text-sm text-gray-700">Break into senior developer, ML engineer, or AI engineer positions at companies that filter for credentials.</p></div>
-      <div class="border-r border-b border-black p-6"><div class="text-2xl font-bold mb-3">→</div><h3 class="font-bold mb-2">International placements</h3><p class="text-sm text-gray-700">ECE approval and ECTS accreditation make you eligible for jobs in the US, Canada, EU and beyond.</p></div>
-      <div class="border-r border-b border-black p-6"><div class="text-2xl font-bold mb-3">→</div><h3 class="font-bold mb-2">R&D and research roles</h3><p class="text-sm text-gray-700">Double your chances at R&D positions that require a Master's-level credential.</p></div>
-      <div class="border-r border-b border-black p-6"><div class="text-2xl font-bold mb-3">→</div><h3 class="font-bold mb-2">Higher education (PhD or 2nd Master's)</h3><p class="text-sm text-gray-700">Transfer your 90 ECTS credits toward further academic study anywhere in the world.</p></div>
-      <div class="border-r border-b border-black p-6"><div class="text-2xl font-bold mb-3">→</div><h3 class="font-bold mb-2">Immigration & global mobility</h3><p class="text-sm text-gray-700">A recognised foreign degree strengthens skilled migration and work visa applications.</p></div>
-      <div class="border-r border-b border-black p-6"><div class="text-2xl font-bold mb-3">→</div><h3 class="font-bold mb-2">Promotions & senior leadership</h3><p class="text-sm text-gray-700">Use the degree as the credential that unlocks the next title at your current company.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ───────── 12. WHO IT'S FOR ───────── -->
+<!-- ───────── 11. WHO IT'S FOR + WHERE IT TAKES YOU (MERGED) ───────── -->
 <section class="border-b border-black bg-[var(--softer)]">
   <div class="max-w-[1400px] mx-auto px-6 py-20">
-    <div class="eyebrow mb-4">Who Neovarsity Is For</div>
-    <h2 class="display text-4xl lg:text-5xl max-w-3xl mb-12">If any of this sounds like you - Neovarsity was built for you.</h2>
+    <div class="eyebrow mb-4">Who It's For · Where It Takes You</div>
+    <h2 class="display text-4xl lg:text-5xl max-w-3xl mb-4">One program. Built for who you are. Aimed at where you're going.</h2>
+    <p class="text-gray-600 max-w-3xl mb-12">If any of these sound like you, Neovarsity was built for the path you're on - and the one you want to be on next.</p>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-black border border-black">
-      <div class="bg-white p-7"><div class="eyebrow text-gray-500 mb-3">01</div><h3 class="font-bold mb-2">The non-CS graduate trying to break into tech</h3><p class="text-sm text-gray-700">You did B.Com, Mechanical, ECE, or Fine Arts. You can code now - but recruiters still filter on the degree. Neovarsity fixes that.</p></div>
-      <div class="bg-white p-7"><div class="eyebrow text-gray-500 mb-3">02</div><h3 class="font-bold mb-2">The senior engineer chasing R&D</h3><p class="text-sm text-gray-700">You want to work on the hard problems at research-led companies. A Master's doubles your callback rate.</p></div>
-      <div class="bg-white p-7"><div class="eyebrow text-gray-500 mb-3">03</div><h3 class="font-bold mb-2">The professional planning to move abroad</h3><p class="text-sm text-gray-700">You need a credential that immigration officers and foreign employers recognise. ECTS + ECE delivers that.</p></div>
-      <div class="bg-white p-7"><div class="eyebrow text-gray-500 mb-3">04</div><h3 class="font-bold mb-2">The mid-level developer eyeing a senior role</h3><p class="text-sm text-gray-700">Your skills are there. The title isn't moving. A globally recognised Master's tips the balance at promotion time.</p></div>
-      <div class="bg-white p-7"><div class="eyebrow text-gray-500 mb-3">05</div><h3 class="font-bold mb-2">The aspiring PhD candidate</h3><p class="text-sm text-gray-700">You want to keep the academic door open. 90 transferable ECTS credits keep it wide open.</p></div>
-      <div class="bg-white p-7"><div class="eyebrow text-gray-500 mb-3">06</div><h3 class="font-bold mb-2">The career-switcher in their 30s</h3><p class="text-sm text-gray-700">You've done 10+ years in one field. A Master's proves the seriousness of your second act.</p></div>
+      <div class="bg-white p-7">
+        <div class="eyebrow text-gray-500 mb-3">01 · The Non-CS Graduate</div>
+        <h3 class="font-bold mb-2">You can code, but recruiters still filter on the degree.</h3>
+        <p class="text-sm text-gray-700 mb-4">B.Com, Mechanical, ECE, or Fine Arts background trying to break into tech.</p>
+        <div class="border-t border-black/20 pt-3 text-sm"><span class="eyebrow text-gray-500">Takes you to →</span><br>A first tech role with a Master's credential that opens the door recruiters used to close.</div>
+      </div>
+
+      <div class="bg-white p-7">
+        <div class="eyebrow text-gray-500 mb-3">02 · The Mid-Level Developer</div>
+        <h3 class="font-bold mb-2">Your skills are there. The title isn't moving.</h3>
+        <p class="text-sm text-gray-700 mb-4">Stuck below the senior promotion ceiling at your current company.</p>
+        <div class="border-t border-black/20 pt-3 text-sm"><span class="eyebrow text-gray-500">Takes you to →</span><br>A senior developer, ML engineer, or AI engineer role - and the credential that unlocks the next title.</div>
+      </div>
+
+      <div class="bg-white p-7">
+        <div class="eyebrow text-gray-500 mb-3">03 · The Senior Engineer</div>
+        <h3 class="font-bold mb-2">You want the hard problems at research-led companies.</h3>
+        <p class="text-sm text-gray-700 mb-4">Eyeing R&D and applied research roles that filter on academic credentials.</p>
+        <div class="border-t border-black/20 pt-3 text-sm"><span class="eyebrow text-gray-500">Takes you to →</span><br>R&D positions at research-led companies - where a Master's doubles your callback rate.</div>
+      </div>
+
+      <div class="bg-white p-7">
+        <div class="eyebrow text-gray-500 mb-3">04 · The Aspiring Global Worker</div>
+        <h3 class="font-bold mb-2">You need a credential the world actually recognises.</h3>
+        <p class="text-sm text-gray-700 mb-4">Planning to apply to jobs, visas, or grad schools abroad.</p>
+        <div class="border-t border-black/20 pt-3 text-sm"><span class="eyebrow text-gray-500">Takes you to →</span><br>International placements across the US, Canada and EU - backed by ECTS accreditation and ECE approval.</div>
+      </div>
+
+      <div class="bg-white p-7">
+        <div class="eyebrow text-gray-500 mb-3">05 · The Aspiring PhD</div>
+        <h3 class="font-bold mb-2">You want to keep the academic door open.</h3>
+        <p class="text-sm text-gray-700 mb-4">Considering a PhD or a second Master's in the next 2-3 years.</p>
+        <div class="border-t border-black/20 pt-3 text-sm"><span class="eyebrow text-gray-500">Takes you to →</span><br>Higher education programs worldwide - with 90 transferable ECTS credits already in hand.</div>
+      </div>
+
+      <div class="bg-white p-7">
+        <div class="eyebrow text-gray-500 mb-3">06 · The Career-Switcher</div>
+        <h3 class="font-bold mb-2">You've done 10+ years in one field. Time for the second act.</h3>
+        <p class="text-sm text-gray-700 mb-4">Switching into tech, data, or AI from a different industry.</p>
+        <div class="border-t border-black/20 pt-3 text-sm"><span class="eyebrow text-gray-500">Takes you to →</span><br>A credible second career - a full Master's that proves the seriousness of the switch.</div>
+      </div>
     </div>
 
     <div class="hairline mt-10 p-6 bg-white">
@@ -609,7 +599,7 @@
         <ul class="space-y-3 text-sm">
           <li class="flex gap-3"><span>✓</span>ECTS-accredited Master's degree documentation</li>
           <li class="flex gap-3"><span>✓</span>Live program extension + additional electives</li>
-          <li class="flex gap-3"><span>✓</span>Free cross-program electives across Academy, DSML, DevOps & AIML</li>
+          <li class="flex gap-3"><span>✓</span>Free cross-program electives across Modern Software and AI Engineering, Modern Data Science and ML with specialisation in AI, DevOps, Cloud & AI Platform Engineering & Advanced AI & Machine Learning</li>
           <li class="flex gap-3"><span>✓</span>+6 months extended placement support</li>
           <li class="flex gap-3"><span>✓</span>Optional Oxford certification</li>
         </ul>
@@ -680,10 +670,10 @@
     <div class="md:col-span-2">
       <div class="eyebrow mb-3">Programs</div>
       <ul class="space-y-2 text-gray-700">
-        <li>Scaler Academy</li>
-        <li>Scaler DSML</li>
-        <li>Scaler DevOps</li>
-        <li>Scaler AIML</li>
+        <li>Modern Software and AI Engineering</li>
+        <li>Scaler Modern Data Science and ML with specialisation in AI</li>
+        <li>Scaler DevOps, Cloud & AI Platform Engineering</li>
+        <li>Scaler Advanced AI & Machine Learning</li>
       </ul>
     </div>
     <div class="md:col-span-2">
